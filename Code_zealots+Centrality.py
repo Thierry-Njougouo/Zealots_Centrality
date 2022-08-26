@@ -1,6 +1,12 @@
 ''' By Thierry N. and Giovanni. This code is used to generate consensus in BA model using qualities in the modify majority update rule.
 We have considered One opinion and 500(niter) networks each formed by 100 nodes. '''
 
+########################################################################################################################################
+#######                                                                                                                        #########
+##########                         !!!!!!!!!! This code is suitable for python versions > 3.7!!!!!                      ################
+#######                                                                                                                        #########
+########################################################################################################################################
+
 import networkx as nx
 import matplotlib.pyplot as plt
 import random
