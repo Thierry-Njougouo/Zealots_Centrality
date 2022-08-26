@@ -106,7 +106,7 @@ for Zeal in List_zealots:
                     Degcentrality = nx.degree_centrality(G)
                     #Descending order sorting centrality
                     DegCent_sorted=dict(sorted(Degcentrality.items(), key=lambda item: item[1],reverse=True))
-                    #Getting indices
+                    #Getting indices of the first Zeal nodes with highest degree
                     Ind_cent=list(DegCent_sorted)[0:Zeal]
 
                         
@@ -130,17 +130,20 @@ for Zeal in List_zealots:
                         print(num_zeros)
                         print(num_ones)
                     
+                    ########### Suffle the population ###########################
+                    np.random.shuffle(population)
+                    
                     # Let's add the zealots to the population
                     for z0 in Ind_cent: #range(number_of_zealots_with_opinion_zero): 
                         newguy = MyAgent(0)
                         newguy.zealot = True
-                        population.append(newguy)
+                        population.insert(z0, newguy)
                     for z1 in range(number_of_zealots_with_opinion_one): 
                         newguy = MyAgent(1)
                         newguy.zealot = True
                         population.append(newguy)
                         
-                    np.random.shuffle(population)
+                   
                     
                     
 
