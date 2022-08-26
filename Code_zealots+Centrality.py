@@ -108,6 +108,7 @@ for Zeal in List_zealots:
                     DegCent_sorted=dict(sorted(Degcentrality.items(), key=lambda item: item[1],reverse=True))
                     #Getting indices of the first Zeal nodes with highest degree
                     Ind_cent=list(DegCent_sorted)[0:Zeal]
+                    Ind_cent_sort=sorted(Ind_cent,reverse=False)
 
                         
                     # create the population (initialisation!!)
@@ -134,7 +135,7 @@ for Zeal in List_zealots:
                     np.random.shuffle(population)
                     
                     # Let's add the zealots to the population
-                    for z0 in Ind_cent: #range(number_of_zealots_with_opinion_zero): 
+                    for z0 in Ind_cent_sort: #range(number_of_zealots_with_opinion_zero): 
                         newguy = MyAgent(0)
                         newguy.zealot = True
                         population.insert(z0, newguy)
